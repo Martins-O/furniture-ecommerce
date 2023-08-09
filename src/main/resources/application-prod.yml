@@ -11,7 +11,7 @@ spring:
 
 mail:
   api:
-    key: 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
+    key: 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
 sendinblue:
   mail:
     url: https://api.brevo.com/v3/emailCampaigns

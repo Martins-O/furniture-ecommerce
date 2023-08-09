@@ -6,6 +6,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -14,8 +16,9 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 
 @Component
+@AllArgsConstructor
 public class JwtGenerator {
-    static SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+    private final SecretKey key; //Keys.secretKeyFor(SignatureAlgorithm.HS512);
 
     public String generateToken(Authentication authentication, Long expiration) {
         SecureUser authenticatedUser = (SecureUser) authentication.getPrincipal();
@@ -45,13 +48,7 @@ public class JwtGenerator {
         return claims.getSubject();
     }
     
-    public static String generateVerificationToken() {
-        return Jwts.builder()
-                .setIssuer("CLM")
-                .signWith(key)
-                .setIssuedAt(new Date())
-                .compact();
-    }
+    
 
     public boolean validateToken(String token) {
         try{

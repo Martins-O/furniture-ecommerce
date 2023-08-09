@@ -5,18 +5,24 @@ import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationReque
 import furniture.ecormmerce.furnitureapi.data.dto.request.Recipient;
 import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 
+import javax.crypto.SecretKey;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 import java.util.stream.Collectors;
 
 public class ApplicationUtilities {
 	
+	
 	public static final String EMAIL_REGEX_STRING="^[A-Za-z0-9+_.-]+@(.+)$";
 	private static final String USER_VERIFICATION_BASE_URL="localhost:9090/api/v1/users/verify";
-	public static  final String WELCOME_MAIL_TEMPLATE_LOCATION="/home/martins-o/IdeaProjects/furnitureEcommerce/src/main/resources/templates/welcome.txt";
+	public static  final String WELCOME_MAIL_TEMPLATE_LOCATION="/home/martins-o/projects/furniture-api/src/main/resources/templates/welcome.txt";
 	public static final int NUMBER_OF_ITEMS_PER_PAGE = 10;
 	public static String getMailTemplate(){
 		try (BufferedReader reader = new BufferedReader(new FileReader (
@@ -27,8 +33,16 @@ public class ApplicationUtilities {
 		}
 	}
 	
+	
+	public static String generateVerificationToken() {
+		return Jwts.builder()
+				.setIssuer("CLM")
+				.signWith(Keys.secretKeyFor(SignatureAlgorithm.HS512))
+				.setIssuedAt(new Date ())
+				.compact();
+	}
 	public static String generateVerificationToken(Long id) {
-		return USER_VERIFICATION_BASE_URL+"?userId="+id+"&token="+ JwtGenerator.generateVerificationToken ();
+		return USER_VERIFICATION_BASE_URL+"?userId="+id+"&token="+ generateVerificationToken ();
 	}
 	public static EmailNotificationRequest buildNotificationRequest(
 			String email,
@@ -38,7 +52,7 @@ public class ApplicationUtilities {
 				new EmailNotificationRequest();
 		request.getTo().add(new Recipient (fullName, email));
 		String template = getMailTemplate();
-		String content = String.format (template, fullName, generateVerificationToken(id));
+		String content = String.format (template, fullName, "enerateVerificationToken(id)");
 		request.setHtmlContent (content);
 		return request;
 	}

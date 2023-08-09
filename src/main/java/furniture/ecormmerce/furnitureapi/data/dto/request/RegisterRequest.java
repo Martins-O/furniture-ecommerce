@@ -28,9 +28,9 @@ public class RegisterRequest {
 	@NotNull(message = "Password address is required")
 	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@#$%^&+=])[A-Za-z\\d@#$%^&+=]{8,}$", message = "Enter a valid password")
 	private String password;
-	@NotNull(message = "Confirm Password address is required")
-	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@#$%^&+=])[A-Za-z\\d@#$%^&+=]{8,}$", message = "Enter a valid password")
-	private String Confirmpassword;
+//	@NotNull(message = "Confirm Password address is required")
+//	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@#$%^&+=])[A-Za-z\\d@#$%^&+=]{8,}$", message = "Enter a valid password")
+	private String confirmPassword;
 	@NotNull(message = "Phone Number address is required")
 	private String phoneNumber;
 }

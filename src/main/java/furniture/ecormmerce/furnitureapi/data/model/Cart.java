@@ -23,7 +23,7 @@ public class Cart {
 			generator = "carts_id"
 	)
 	private Long Id;
-	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<CartItem> cartItems;
 
 }

@@ -13,6 +13,7 @@ import furniture.ecormmerce.furnitureapi.exception.UserAlreadyExistsException;
 import furniture.ecormmerce.furnitureapi.service.interfaces.AppUserService;
 import furniture.ecormmerce.furnitureapi.service.interfaces.AuthService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,7 +28,7 @@ import static furniture.ecormmerce.furnitureapi.common.Messages.LOGIN_FAIL;
 import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.buildNotificationRequest;
 import static furniture.ecormmerce.furnitureapi.utils.Responses.*;
 
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
@@ -42,21 +43,24 @@ public class AuthServiceImpl implements AuthService {
 		if (findUser != null) {
 			throw new UserAlreadyExistsException (EMAIL_ALREADY_EXIST, HttpStatus.BAD_REQUEST);
 		}
+		log.info ("request enter here");
 		AppUser createUser = AppUser.builder ()
 				.lastName (request.getLastName ())
 				.firstName (request.getFirstName ())
 				.email (request.getEmail ())
 				.password (encoder.encode (request.getPassword ()))
-				.confirmPassword (encoder.encode (request.getConfirmpassword ()))
+				.confirmPassword (encoder.encode (request.getConfirmPassword ()))
 				.phoneNumber (request.getPhoneNumber ())
 				.createdAt (LocalDateTime.now ())
 				.build ();
+		log.info ("request enter here also");
 		var savedUser = service.saveUsers (createUser);
 		EmailNotificationRequest emailNotificationRequest =
 				buildNotificationRequest(savedUser.getEmail (),
 						savedUser.getLastName (),
 						savedUser.getId ());
 		var response = mailService.sendHtmlMail (emailNotificationRequest);
+		log.info ("request lastly");
 		if (response == null){
 			return getFailureMessage();
 		}

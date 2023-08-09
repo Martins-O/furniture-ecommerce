@@ -3,12 +3,17 @@ package furniture.ecormmerce.furnitureapi.config.app;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import furniture.ecormmerce.furnitureapi.config.mail.MailConfiguration;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.crypto.SecretKey;
+import java.security.Key;
 
 @Configuration
 @RequiredArgsConstructor
@@ -26,6 +31,11 @@ public class ApplicationConfiguration {
 	private String mailApiKey;
 	@Value("${sendinblue.mail.url}")
 	private String mailUrl;
+	
+	@Bean
+	public SecretKey key() {
+		return Keys.secretKeyFor(SignatureAlgorithm.HS512);
+	}
  
 	
 	
