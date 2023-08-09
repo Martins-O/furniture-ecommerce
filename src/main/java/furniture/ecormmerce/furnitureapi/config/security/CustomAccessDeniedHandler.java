@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.config.security;
+package furniture.ecormmerce.furnitureapi.config.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

@@ -1,6 +1,6 @@
-package furniture.ecommerce.furnitureecommerce.config.mail;
+package furniture.ecormmerce.furnitureapi.config.mail;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.request.EmailNotificationRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

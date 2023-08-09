@@ -1,6 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.service.interfaces;
+package furniture.ecormmerce.furnitureapi.service.interfaces;
 
-import furniture.ecommerce.furnitureecommerce.data.model.Cart;
+
+import furniture.ecormmerce.furnitureapi.data.model.Cart;
 
 public interface CartService {
 	

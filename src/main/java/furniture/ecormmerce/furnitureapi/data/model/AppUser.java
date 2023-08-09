@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.data.model;
+package furniture.ecormmerce.furnitureapi.data.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import furniture.ecommerce.furnitureecommerce.data.enums.Role;
+import furniture.ecormmerce.furnitureapi.data.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;

@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.data.dto.request;
+package furniture.ecormmerce.furnitureapi.data.dto.request;
 
-import furniture.ecommerce.furnitureecommerce.data.enums.Color;
-import furniture.ecommerce.furnitureecommerce.data.enums.Type;
+import furniture.ecormmerce.furnitureapi.data.enums.Color;
+import furniture.ecormmerce.furnitureapi.data.enums.Type;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

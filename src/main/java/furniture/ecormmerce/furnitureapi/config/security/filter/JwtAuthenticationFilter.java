@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.config.security.filter;
+package furniture.ecormmerce.furnitureapi.config.security.filter;
 
-import furniture.ecommerce.furnitureecommerce.config.security.jwt.JwtGenerator;
-import furniture.ecommerce.furnitureecommerce.config.security.service.JpaUserDetailsService;
+import furniture.ecormmerce.furnitureapi.config.security.jwt.JwtGenerator;
+import furniture.ecormmerce.furnitureapi.config.security.service.JpaUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

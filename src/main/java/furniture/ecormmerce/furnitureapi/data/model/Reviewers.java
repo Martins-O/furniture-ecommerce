@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.data.model;
+package furniture.ecormmerce.furnitureapi.data.model;
 
 
-import furniture.ecommerce.furnitureecommerce.data.enums.Rating;
+import furniture.ecormmerce.furnitureapi.data.enums.Rating;
 import jakarta.persistence.*;
 import lombok.*;
 

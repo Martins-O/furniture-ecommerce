@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.config.mail;
+package furniture.ecormmerce.furnitureapi.config.mail;
 
 
 import lombok.AllArgsConstructor;

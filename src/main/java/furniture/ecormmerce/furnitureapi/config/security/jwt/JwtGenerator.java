@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.config.security.jwt;
+package furniture.ecormmerce.furnitureapi.config.security.jwt;
 
 
-import furniture.ecommerce.furnitureecommerce.config.security.user.SecureUser;
+import furniture.ecormmerce.furnitureapi.config.security.user.SecureUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

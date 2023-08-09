@@ -1,8 +1,8 @@
-package furniture.ecommerce.furnitureecommerce.config.app;
+package furniture.ecormmerce.furnitureapi.config.app;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
-import furniture.ecommerce.furnitureecommerce.config.mail.MailConfiguration;
+import furniture.ecormmerce.furnitureapi.config.mail.MailConfiguration;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

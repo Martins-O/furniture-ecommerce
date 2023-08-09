@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.exception;
+package furniture.ecormmerce.furnitureapi.exception;
 
 import org.springframework.http.HttpStatus;
 

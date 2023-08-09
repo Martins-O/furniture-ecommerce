@@ -1,10 +1,10 @@
-package furniture.ecommerce.furnitureecommerce.controller;
+package furniture.ecormmerce.furnitureapi.controller;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.request.ProductRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.request.UpdateProductRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.Product;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.ProductService;
+import furniture.ecormmerce.furnitureapi.data.dto.request.ProductRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.request.UpdateProductRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.Product;
+import furniture.ecormmerce.furnitureapi.service.interfaces.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,8 @@ public class ProductController {
 	}
 	
 	@PutMapping("{productId}")
-	public ResponseEntity<ApiResponse> updateProduct(@PathVariable("productId") Long productId, @RequestBody UpdateProductRequest request){
+	public ResponseEntity<ApiResponse> updateProduct(@PathVariable("productId") Long productId,
+	                                                 @RequestBody UpdateProductRequest request){
 		var response = service.updateProduct (productId, request);
 		return new ResponseEntity<> (response,
 				HttpStatus.ACCEPTED);

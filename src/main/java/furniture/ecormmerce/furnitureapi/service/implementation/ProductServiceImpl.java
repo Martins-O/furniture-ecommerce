@@ -1,13 +1,13 @@
-package furniture.ecommerce.furnitureecommerce.service.implementation;
+package furniture.ecormmerce.furnitureapi.service.implementation;
 
-import furniture.ecommerce.furnitureecommerce.cloud.CloudService;
-import furniture.ecommerce.furnitureecommerce.data.dto.request.ProductRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.request.UpdateProductRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.Product;
-import furniture.ecommerce.furnitureecommerce.data.repository.ProductRepository;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.ProductService;
-import furniture.ecommerce.furnitureecommerce.utils.Responses;
+import furniture.ecormmerce.furnitureapi.cloud.CloudService;
+import furniture.ecormmerce.furnitureapi.data.dto.request.ProductRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.request.UpdateProductRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.Product;
+import furniture.ecormmerce.furnitureapi.data.repository.ProductRepository;
+import furniture.ecormmerce.furnitureapi.service.interfaces.ProductService;
+import furniture.ecormmerce.furnitureapi.utils.Responses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

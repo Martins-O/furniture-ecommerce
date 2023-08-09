@@ -1,6 +1,6 @@
-package furniture.ecommerce.furnitureecommerce.data.dto.request;
+package furniture.ecormmerce.furnitureapi.data.dto.request;
 
-import furniture.ecommerce.furnitureecommerce.data.enums.Rating;
+import furniture.ecormmerce.furnitureapi.data.enums.Rating;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -9,7 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import static furniture.ecommerce.furnitureecommerce.utils.ApplicationUtilities.EMAIL_REGEX_STRING;
+import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.EMAIL_REGEX_STRING;
+
 
 @NoArgsConstructor
 @AllArgsConstructor

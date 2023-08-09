@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.config.security;
+package furniture.ecormmerce.furnitureapi.config.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

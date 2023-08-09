@@ -1,7 +1,8 @@
-package furniture.ecommerce.furnitureecommerce.service.security;
+package furniture.ecormmerce.furnitureapi.service.security;
 
 
-import furniture.ecommerce.furnitureecommerce.data.model.SecurityDetail;
+
+import furniture.ecormmerce.furnitureapi.data.model.SecurityDetail;
 
 import java.util.List;
 

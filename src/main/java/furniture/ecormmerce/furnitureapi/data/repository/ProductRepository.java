@@ -1,6 +1,6 @@
-package furniture.ecommerce.furnitureecommerce.data.repository;
+package furniture.ecormmerce.furnitureapi.data.repository;
 
-import furniture.ecommerce.furnitureecommerce.data.model.Product;
+import furniture.ecormmerce.furnitureapi.data.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;

@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.utils;
+package furniture.ecormmerce.furnitureapi.utils;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.springframework.beans.factory.annotation.Value;

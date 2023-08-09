@@ -1,6 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.data.repository;
+package furniture.ecormmerce.furnitureapi.data.repository;
 
-import furniture.ecommerce.furnitureecommerce.data.model.Cart;
+
+import furniture.ecormmerce.furnitureapi.data.model.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {

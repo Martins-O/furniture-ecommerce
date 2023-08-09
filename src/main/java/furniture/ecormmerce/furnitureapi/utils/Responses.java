@@ -1,10 +1,10 @@
-package furniture.ecommerce.furnitureecommerce.utils;
+package furniture.ecormmerce.furnitureapi.utils;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.TokenResponse;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.dto.response.TokenResponse;
 import org.springframework.http.HttpStatus;
 
-import static furniture.ecommerce.furnitureecommerce.common.Messages.REG_FAIL;
+import static furniture.ecormmerce.furnitureapi.common.Messages.REG_FAIL;
 
 
 public class Responses {

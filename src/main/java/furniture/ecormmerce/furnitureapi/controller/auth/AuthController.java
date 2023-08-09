@@ -1,10 +1,10 @@
-package furniture.ecommerce.furnitureecommerce.controller.auth;
+package furniture.ecormmerce.furnitureapi.controller.auth;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.request.LoginResponse;
-import furniture.ecommerce.furnitureecommerce.data.dto.request.RegisterRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.TokenResponse;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.AuthService;
+import furniture.ecormmerce.furnitureapi.data.dto.request.LoginResponse;
+import furniture.ecormmerce.furnitureapi.data.dto.request.RegisterRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.dto.response.TokenResponse;
+import furniture.ecormmerce.furnitureapi.service.interfaces.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

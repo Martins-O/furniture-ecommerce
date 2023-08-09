@@ -1,6 +1,6 @@
-package furniture.ecommerce.furnitureecommerce.config.security;
+package furniture.ecormmerce.furnitureapi.config.security;
 
-import furniture.ecommerce.furnitureecommerce.config.security.filter.JwtAuthenticationFilter;
+import furniture.ecormmerce.furnitureapi.config.security.filter.JwtAuthenticationFilter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

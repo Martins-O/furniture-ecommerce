@@ -1,19 +1,19 @@
-package furniture.ecommerce.furnitureecommerce.service.implementation;
+package furniture.ecormmerce.furnitureapi.service.implementation;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.request.CartItemsDto;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.AppUser;
-import furniture.ecommerce.furnitureecommerce.data.model.Cart;
-import furniture.ecommerce.furnitureecommerce.data.model.CartItem;
-import furniture.ecommerce.furnitureecommerce.data.model.Product;
-import furniture.ecommerce.furnitureecommerce.data.repository.CartItemRepository;
-import furniture.ecommerce.furnitureecommerce.data.repository.CartRepository;
-import furniture.ecommerce.furnitureecommerce.exception.FurnitureException;
-import furniture.ecommerce.furnitureecommerce.exception.UserNotFoundException;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.AppUserService;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.CartService;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.ProductService;
-import furniture.ecommerce.furnitureecommerce.utils.Responses;
+import furniture.ecormmerce.furnitureapi.data.dto.request.CartItemsDto;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.AppUser;
+import furniture.ecormmerce.furnitureapi.data.model.Cart;
+import furniture.ecormmerce.furnitureapi.data.model.CartItem;
+import furniture.ecormmerce.furnitureapi.data.model.Product;
+import furniture.ecormmerce.furnitureapi.data.repository.CartItemRepository;
+import furniture.ecormmerce.furnitureapi.data.repository.CartRepository;
+import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
+import furniture.ecormmerce.furnitureapi.exception.UserNotFoundException;
+import furniture.ecormmerce.furnitureapi.service.interfaces.AppUserService;
+import furniture.ecormmerce.furnitureapi.service.interfaces.CartService;
+import furniture.ecormmerce.furnitureapi.service.interfaces.ProductService;
+import furniture.ecormmerce.furnitureapi.utils.Responses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -21,8 +21,8 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import static furniture.ecormmerce.furnitureapi.common.Messages.USER_NOT_FOUND;
 
-import static furniture.ecommerce.furnitureecommerce.common.Messages.USER_NOT_FOUND;
 
 @Service
 @RequiredArgsConstructor
@@ -41,7 +41,7 @@ public class CartServiceImpl implements CartService {
 		BigDecimal totalPrice = BigDecimal.valueOf(0.0);
 		
 		for (CartItemsDto item : items) {
-			Product product = service.getProductByName (item.getProducts().toString ());
+			Product product = service.getProductByName (item.getProducts().getName ());
 			if (product == null) {
 				throw new FurnitureException ("Product not found", HttpStatus.NOT_FOUND);
 			}

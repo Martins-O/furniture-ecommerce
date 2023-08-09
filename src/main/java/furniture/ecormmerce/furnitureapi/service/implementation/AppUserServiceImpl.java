@@ -1,21 +1,22 @@
-package furniture.ecommerce.furnitureecommerce.service.implementation;
+package furniture.ecormmerce.furnitureapi.service.implementation;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.AppUser;
-import furniture.ecommerce.furnitureecommerce.data.repository.AppUserRepository;
-import furniture.ecommerce.furnitureecommerce.exception.FurnitureException;
-import furniture.ecommerce.furnitureecommerce.exception.UserNotFoundException;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.AppUserService;
-import furniture.ecommerce.furnitureecommerce.utils.ApplicationUtilities;
-import furniture.ecommerce.furnitureecommerce.utils.Responses;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.AppUser;
+import furniture.ecormmerce.furnitureapi.data.repository.AppUserRepository;
+import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
+import furniture.ecormmerce.furnitureapi.exception.UserNotFoundException;
+import furniture.ecormmerce.furnitureapi.service.interfaces.AppUserService;
+import furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities;
+import furniture.ecormmerce.furnitureapi.utils.Responses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static furniture.ecommerce.furnitureecommerce.common.Messages.ACC_VERIFY_FAILURE;
-import static furniture.ecommerce.furnitureecommerce.common.Messages.USER_NOT_FOUND;
+import static furniture.ecormmerce.furnitureapi.common.Messages.ACC_VERIFY_FAILURE;
+import static furniture.ecormmerce.furnitureapi.common.Messages.USER_NOT_FOUND;
+
 
 @Service
 @RequiredArgsConstructor

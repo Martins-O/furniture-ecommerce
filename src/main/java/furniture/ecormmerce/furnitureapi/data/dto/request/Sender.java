@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.data.dto.request;
+package furniture.ecormmerce.furnitureapi.data.dto.request;
 
 import lombok.*;
 

@@ -1,8 +1,8 @@
-package furniture.ecommerce.furnitureecommerce.controller;
+package furniture.ecormmerce.furnitureapi.controller;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.AppUser;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.AppUserService;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.AppUser;
+import furniture.ecormmerce.furnitureapi.service.interfaces.AppUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

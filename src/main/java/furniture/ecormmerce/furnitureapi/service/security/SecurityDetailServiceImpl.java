@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.service.security;
+package furniture.ecormmerce.furnitureapi.service.security;
 
-import furniture.ecommerce.furnitureecommerce.data.model.SecurityDetail;
-import furniture.ecommerce.furnitureecommerce.data.repository.SecurityDetailRepository;
+import furniture.ecormmerce.furnitureapi.data.model.SecurityDetail;
+import furniture.ecormmerce.furnitureapi.data.repository.SecurityDetailRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

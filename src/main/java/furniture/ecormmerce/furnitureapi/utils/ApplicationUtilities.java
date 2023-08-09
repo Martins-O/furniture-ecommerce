@@ -1,9 +1,9 @@
-package furniture.ecommerce.furnitureecommerce.utils;
+package furniture.ecormmerce.furnitureapi.utils;
 
-import furniture.ecommerce.furnitureecommerce.config.security.jwt.JwtGenerator;
-import furniture.ecommerce.furnitureecommerce.data.dto.request.EmailNotificationRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.request.Recipient;
-import furniture.ecommerce.furnitureecommerce.exception.FurnitureException;
+import furniture.ecormmerce.furnitureapi.config.security.jwt.JwtGenerator;
+import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.request.Recipient;
+import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
 import io.jsonwebtoken.Jwts;
 import org.springframework.http.HttpStatus;
 

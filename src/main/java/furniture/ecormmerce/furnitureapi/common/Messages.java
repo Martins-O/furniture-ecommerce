@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.common;
+package furniture.ecormmerce.furnitureapi.common;
 
 public class Messages {
 	

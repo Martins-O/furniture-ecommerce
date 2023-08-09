@@ -1,11 +1,11 @@
-package furniture.ecommerce.furnitureecommerce.service.implementation;
+package furniture.ecormmerce.furnitureapi.service.implementation;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.request.ReviewRequest;
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.Reviewers;
-import furniture.ecommerce.furnitureecommerce.data.repository.ReviewersRepository;
-import furniture.ecommerce.furnitureecommerce.service.interfaces.ReviewersService;
-import furniture.ecommerce.furnitureecommerce.utils.Responses;
+import furniture.ecormmerce.furnitureapi.data.dto.request.ReviewRequest;
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.Reviewers;
+import furniture.ecormmerce.furnitureapi.data.repository.ReviewersRepository;
+import furniture.ecormmerce.furnitureapi.service.interfaces.ReviewersService;
+import furniture.ecormmerce.furnitureapi.utils.Responses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static furniture.ecommerce.furnitureecommerce.utils.ApplicationUtilities.NUMBER_OF_ITEMS_PER_PAGE;
+import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.NUMBER_OF_ITEMS_PER_PAGE;
+
 
 @Service
 @RequiredArgsConstructor

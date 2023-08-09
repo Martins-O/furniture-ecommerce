@@ -1,8 +1,8 @@
-package furniture.ecommerce.furnitureecommerce.cloud;
+package furniture.ecormmerce.furnitureapi.cloud;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
-import furniture.ecommerce.furnitureecommerce.exception.ImageUploadException;
+import furniture.ecormmerce.furnitureapi.exception.ImageUploadException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

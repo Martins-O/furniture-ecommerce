@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.cloud;
+package furniture.ecormmerce.furnitureapi.cloud;
 
 import org.springframework.web.multipart.MultipartFile;
 

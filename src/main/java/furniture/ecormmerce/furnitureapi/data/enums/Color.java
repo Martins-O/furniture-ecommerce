@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.data.enums;
+package furniture.ecormmerce.furnitureapi.data.enums;
 
 public enum Color {
 	YELLOW,

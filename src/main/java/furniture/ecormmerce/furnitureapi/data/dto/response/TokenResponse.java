@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.data.dto.response;
+package furniture.ecormmerce.furnitureapi.data.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;

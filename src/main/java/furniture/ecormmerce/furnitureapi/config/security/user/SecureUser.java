@@ -1,7 +1,7 @@
-package furniture.ecommerce.furnitureecommerce.config.security.user;
+package furniture.ecormmerce.furnitureapi.config.security.user;
 
-import furniture.ecommerce.furnitureecommerce.data.enums.Role;
-import furniture.ecommerce.furnitureecommerce.data.model.AppUser;
+import furniture.ecormmerce.furnitureapi.data.enums.Role;
+import furniture.ecormmerce.furnitureapi.data.model.AppUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import org.springframework.security.core.GrantedAuthority;

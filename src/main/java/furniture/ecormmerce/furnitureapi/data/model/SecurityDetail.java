@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.data.model;
+package furniture.ecormmerce.furnitureapi.data.model;
 
 import jakarta.persistence.*;
 import lombok.*;

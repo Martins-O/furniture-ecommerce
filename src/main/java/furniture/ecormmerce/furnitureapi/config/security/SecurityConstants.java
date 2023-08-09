@@ -1,4 +1,4 @@
-package furniture.ecommerce.furnitureecommerce.config.security;
+package furniture.ecormmerce.furnitureapi.config.security;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,7 +1,8 @@
-package furniture.ecommerce.furnitureecommerce.service.interfaces;
+package furniture.ecormmerce.furnitureapi.service.interfaces;
 
-import furniture.ecommerce.furnitureecommerce.data.dto.response.ApiResponse;
-import furniture.ecommerce.furnitureecommerce.data.model.AppUser;
+
+import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
+import furniture.ecormmerce.furnitureapi.data.model.AppUser;
 
 public interface AppUserService  {
 	AppUser saveUsers(AppUser user);
