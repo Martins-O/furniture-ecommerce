@@ -1,0 +1,11 @@
+spring:
+  config:
+    import: secrets.yml
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+  main:
+    allow-bean-definition-overriding: true
