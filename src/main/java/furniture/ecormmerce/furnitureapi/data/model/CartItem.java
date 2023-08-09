@@ -31,15 +31,15 @@ public class CartItem {
 			name = "orders"
 	)
 	private AppUser userOrder;
-	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.REMOVE, CascadeType.PERSIST})
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REMOVE, CascadeType.PERSIST})
 	@JoinTable(
 			name = "product"
 	)
-	private List<Product> products;
+	private Product products;
 	
-	@ManyToOne
-	@JoinColumn(name = "cart_id")
-	private Cart cart;
+//	@ManyToOne
+//	@JoinColumn(name = "cart_id")
+//	private Cart cart;
 	private int quantity;
 	private BigDecimal price;
 }

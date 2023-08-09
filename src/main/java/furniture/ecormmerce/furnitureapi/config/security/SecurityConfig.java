@@ -32,7 +32,7 @@ public class SecurityConfig{
 
 
     private final String[] allowedEndpoints = {
-            "/api/v1/users/**", "/api/v1/users/reset-password/**","/api/v1/users/profilepicture/**",
+            "/api/v1/users/**", "/api/v1/products/**","/api/v1/auth/**",
             "/swagger-ui/index.html", "/swagger-ui/**", "/v3/api-docs", "/v3/api-docs/**"
     };
 

@@ -9,4 +9,6 @@ public interface AppUserService  {
 	AppUser getUserByEmail(String email);
 	
 	ApiResponse verifyAccount(Long userId, String token);
+	
+	AppUser getUserById(long userId);
 }

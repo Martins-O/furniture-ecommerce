@@ -21,4 +21,5 @@ public interface ProductService {
 	Product getProductByPrice(BigDecimal price);
 	
 	Product saveProduct(Product product);
+	Product getProductById(Long id);
 }

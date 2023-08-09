@@ -41,6 +41,12 @@ public class AppUserServiceImpl implements AppUserService {
 		);
 	}
 	
+	@Override
+	public AppUser getUserById(long userId) {
+		return repository.findById(userId)
+				.orElseThrow (() -> new IllegalStateException("User not found"));
+	}
+	
 	private void enableAppUserAccount(AppUser user) {
 		user.setEnabled (true);
 		saveUsers (user);

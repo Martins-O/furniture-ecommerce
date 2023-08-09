@@ -22,8 +22,14 @@ public class AppUserController {
 	}
 	
 	@GetMapping("{email}")
-	public ResponseEntity<AppUser> getUser(String email){
+	public ResponseEntity<AppUser> getUser(@PathVariable("email") String email){
 		return new ResponseEntity<>(service.getUserByEmail (email),
+				HttpStatus.OK);
+	}
+	
+	@GetMapping("{userId}")
+	public ResponseEntity<AppUser> getUser(@PathVariable("userId") Long userId){
+		return new ResponseEntity<>(service.getUserById (userId),
 				HttpStatus.OK);
 	}
 }

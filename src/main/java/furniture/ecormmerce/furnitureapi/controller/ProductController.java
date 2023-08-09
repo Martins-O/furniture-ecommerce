@@ -51,5 +51,11 @@ public class ProductController {
 				HttpStatus.OK);
 	}
 	
+	@GetMapping("{productId}")
+	public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId){
+		return new ResponseEntity<>(service.getProductById (productId),
+				HttpStatus.OK);
+	}
+	
 	
 }
