@@ -1,10 +1,27 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
+    url: jdbc:mysql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
     username: ${PROD_DB_USERNAME}
     password: ${PROD_DB_PASSWORD}
-    name: furniture-api
+    name: railway
 
   sql:
     init:
       mode: always
+
+mail:
+  api:
+    key: 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
+sendinblue:
+  mail:
+    url: https://api.brevo.com/v3/emailCampaigns
+
+cloudinary:
+  cloud:
+    name: martins-o
+  api:
+    secret: rco0un61BRlpULBBUzlitm0aWhU
+    key: 432922932255442
+
+AES_ALGORITHM: ${ALGORITHM:AES}
+ENCRYPTION_KEY : ${KEY:my2243VeryLOnd2343EncryptionKey2}

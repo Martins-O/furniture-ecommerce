@@ -1,6 +1,6 @@
 spring:
   config:
-    import: secrets.yml
+    import: application-prod.yml
 
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -9,3 +9,6 @@ spring:
     open-in-view: true
   main:
     allow-bean-definition-overriding: true
+
+#  profiles:
+#    active: application-prod.yml
