@@ -70,7 +70,7 @@ public class SecurityConfig{
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("*")
-                        .allowedMethods("POST", "GET", "PUT", "PATCH", "DELETE");
+                        .allowedMethods("POST", "GET", "PUT", "PATCH", "DELETE", "OPTIONS");
             }
         };
     }

@@ -7,6 +7,7 @@ import furniture.ecormmerce.furnitureapi.data.dto.response.TokenResponse;
 import furniture.ecormmerce.furnitureapi.service.interfaces.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/auth/")
-@CrossOrigin(origins = "*")
+@Slf4j
+//@CrossOrigin(origins = "*")
 public class AuthController {
 	
 	private final AuthService service;
