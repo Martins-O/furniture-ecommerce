@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
 				.build();
 	}
 	
-	@ExceptionHandler(UserNotFoundException.class)
+	@ExceptionHandler(UserAlreadyExistsException.class)
 	public ApiResponse handleUserAlreadyExistException(HttpServletRequest request,
 	                                        HttpServletResponse response){
 		return ApiResponse.builder()
