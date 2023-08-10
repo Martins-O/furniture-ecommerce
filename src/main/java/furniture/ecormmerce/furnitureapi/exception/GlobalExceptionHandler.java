@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
 	                                        HttpServletResponse response){
 		return ApiResponse.builder()
 				.message ("User not found")
-				.statusCode(HttpServletResponse.SC_NOT_FOUND)
+				.statusCode(response.SC_NOT_FOUND)
 				.isSuccessful (false)
 				.build();
 	}
@@ -25,8 +25,30 @@ public class GlobalExceptionHandler {
 	public ApiResponse handleUserAlreadyExistException(HttpServletRequest request,
 	                                        HttpServletResponse response){
 		return ApiResponse.builder()
+				.data (request.getMethod ())
 				.message (EMAIL_ALREADY_EXIST)
-				.statusCode(HttpServletResponse.SC_FORBIDDEN)
+				.statusCode(response.SC_FORBIDDEN)
+				.isSuccessful (false)
+				.build();
+	}
+	
+	@ExceptionHandler(ImageUploadException.class)
+	public ApiResponse handleImageUploadException(HttpServletRequest request,
+	                                        HttpServletResponse response){
+		return ApiResponse.builder()
+				.data (request.getMethod ())
+				.message ("Image upload Failed")
+				.statusCode(response.SC_FORBIDDEN)
+				.isSuccessful (false)
+				.build();
+	}
+	@ExceptionHandler(LoginFailureException.class)
+	public ApiResponse handleLoginFailureException(HttpServletRequest request,
+	                                        HttpServletResponse response){
+		return ApiResponse.builder()
+				.data (request.getMethod ())
+				.message ("Invalid login details")
+				.statusCode(response.SC_BAD_GATEWAY)
 				.isSuccessful (false)
 				.build();
 	}
