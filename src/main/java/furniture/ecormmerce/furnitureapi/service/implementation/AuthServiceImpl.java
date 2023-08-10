@@ -55,15 +55,15 @@ public class AuthServiceImpl implements AuthService {
 				.build ();
 		log.info ("request enter here also");
 		var savedUser = service.saveUsers (createUser);
-		EmailNotificationRequest emailNotificationRequest =
-				buildNotificationRequest(savedUser.getEmail (),
-						savedUser.getLastName (),
-						savedUser.getId ());
-		var response = mailService.sendHtmlMail (emailNotificationRequest);
-		log.info ("request lastly");
-		if (response == null){
-			return getFailureMessage();
-		}
+//		EmailNotificationRequest emailNotificationRequest =
+//				buildNotificationRequest(savedUser.getEmail (),
+//						savedUser.getLastName (),
+//						savedUser.getId ());
+//		var response = mailService.sendHtmlMail (emailNotificationRequest);
+//		log.info ("request lastly");
+//		if (response == null){
+//			return getFailureMessage();
+//		}
 		return createdResponse (savedUser);
 	}
 	
