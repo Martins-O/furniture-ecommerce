@@ -8,13 +8,12 @@ spring:
   mail:
     host: smtp.gmail.com
     username: Jojololamartins686@gmail.com
-    password: svzmvfoipwikhzkz
+    password: ${PASSWORD}
     properties:
       mail:
         transport:
           protocol: smtp
         smtp:
-          hostname: smtp.gmail.com
           port: 465
           auth: true
           starttls:
