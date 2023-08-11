@@ -23,7 +23,7 @@ public class ApplicationUtilities {
 	
 	public static final String EMAIL_REGEX_STRING="^[A-Za-z0-9+_.-]+@(.+)$";
 	private static final String USER_VERIFICATION_BASE_URL="localhost:8080/api/v1/users/verify";
-	public static  final String WELCOME_MAIL_TEMPLATE_LOCATION="/home/martins-o/projects/furniture-api/src/main/resources/templates/welcome.html";
+	public static  final String WELCOME_MAIL_TEMPLATE_LOCATION="src/main/resources/templates/welcome.html";
 	public static final int NUMBER_OF_ITEMS_PER_PAGE = 10;
 	public static String getMailTemplate(){
 		try (BufferedReader reader = new BufferedReader(new FileReader (
