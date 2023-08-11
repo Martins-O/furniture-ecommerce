@@ -27,10 +27,10 @@ public class ApplicationConfiguration {
 	@Value("${cloudinary.cloud.name}")
 	private String cloudName;
 	
-	@Value("${mail.api.key}")
-	private String mailApiKey;
-	@Value("${sendinblue.mail.url}")
-	private String mailUrl;
+//	@Value("${mail.api.key}")
+//	private String mailApiKey;
+//	@Value("${sendinblue.mail.url}")
+//	private String mailUrl;
 	
 	@Bean
 	public SecretKey key() {
@@ -41,11 +41,11 @@ public class ApplicationConfiguration {
 	
 	
 	
-	@Bean
-	public MailConfiguration mailConfig(){
-		return new MailConfiguration (mailApiKey, mailUrl);
-	}
-	
+//	@Bean
+//	public MailConfiguration mailConfig(){
+//		return new MailConfiguration (mailApiKey, mailUrl);
+//	}
+//
 	@Bean
 	public Cloudinary cloudinary(){
 		return new Cloudinary(
@@ -59,8 +59,5 @@ public class ApplicationConfiguration {
 	
 
 	
-	@Bean
-	public PasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder ();
-	}
+
 }

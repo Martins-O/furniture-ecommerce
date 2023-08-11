@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
 		return ApiResponse.builder()
 				.data (request.getMethod ())
 				.message ("Invalid login details")
-				.statusCode(response.SC_BAD_GATEWAY)
+				.statusCode(HttpServletResponse.SC_BAD_REQUEST)
 				.isSuccessful (false)
 				.build();
 	}

@@ -5,16 +5,33 @@ spring:
     password: ${PROD_DB_PASSWORD}
     name: railway
 
+  mail:
+    host: smtp.gmail.com
+    username: Jojololamartins686@gmail.com
+    password: svzmvfoipwikhzkz
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          port: smtp.gmail.com
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
   sql:
     init:
       mode: always
 
-mail:
-  api:
-    key: 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
-sendinblue:
-  mail:
-    url: https://api.brevo.com/v3/emailCampaigns
+JWT_SECRET: ${SECRET_JWT_SECRET}
+
+#mail:
+#  api:
+#    key: ${KEY_MAIL_SECRET_KEY}
+#sendinblue:
+#  mail:
+#    url: https://api.brevo.com/v3/emailCampaigns
 
 cloudinary:
   cloud:

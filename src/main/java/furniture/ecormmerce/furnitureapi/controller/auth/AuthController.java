@@ -5,6 +5,7 @@ import furniture.ecormmerce.furnitureapi.data.dto.request.RegisterRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
 import furniture.ecormmerce.furnitureapi.data.dto.response.TokenResponse;
 import furniture.ecormmerce.furnitureapi.service.interfaces.AuthService;
+import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,13 +23,13 @@ public class AuthController {
 	private final AuthService service;
 	
 	@PostMapping()
-	public ResponseEntity<ApiResponse> register(@Valid @RequestBody RegisterRequest request){
+	public ResponseEntity<ApiResponse> register(@Valid @RequestBody RegisterRequest request) throws MessagingException {
 		return new ResponseEntity<>(service.signUp (request),
 				HttpStatus.CREATED);
 	}
 	
 	@PostMapping("login")
-	public ResponseEntity<TokenResponse> login(@RequestBody LoginResponse request){
+	public ResponseEntity<ApiResponse> login(@RequestBody LoginResponse request){
 		return new ResponseEntity<>(service.signIn (request),
 				HttpStatus.OK);
 	}

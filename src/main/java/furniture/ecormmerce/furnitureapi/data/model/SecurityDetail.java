@@ -2,6 +2,7 @@ package furniture.ecormmerce.furnitureapi.data.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 @Setter
 @Getter
@@ -13,6 +14,7 @@ public class SecurityDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Length(max = 500)
     private String token;
     @OneToOne
     private AppUser user;

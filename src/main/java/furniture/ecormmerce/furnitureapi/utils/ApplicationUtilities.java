@@ -4,6 +4,7 @@ import furniture.ecormmerce.furnitureapi.config.security.jwt.JwtGenerator;
 import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.request.Recipient;
 import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
+import furniture.ecormmerce.furnitureapi.javaMail.MailRequest;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -21,8 +22,8 @@ public class ApplicationUtilities {
 	
 	
 	public static final String EMAIL_REGEX_STRING="^[A-Za-z0-9+_.-]+@(.+)$";
-	private static final String USER_VERIFICATION_BASE_URL="localhost:9090/api/v1/users/verify";
-	public static  final String WELCOME_MAIL_TEMPLATE_LOCATION="/home/martins-o/projects/furniture-api/src/main/resources/templates/welcome.txt";
+	private static final String USER_VERIFICATION_BASE_URL="localhost:8080/api/v1/users/verify";
+	public static  final String WELCOME_MAIL_TEMPLATE_LOCATION="/home/martins-o/projects/furniture-api/src/main/resources/templates/welcome.html";
 	public static final int NUMBER_OF_ITEMS_PER_PAGE = 10;
 	public static String getMailTemplate(){
 		try (BufferedReader reader = new BufferedReader(new FileReader (
@@ -35,6 +36,7 @@ public class ApplicationUtilities {
 	
 	
 	public static String generateVerificationToken() {
+//		SecretKey key = Jwts.SIG.HS256.key().build();
 		return Jwts.builder()
 				.setIssuer("CLM")
 				.signWith(Keys.secretKeyFor(SignatureAlgorithm.HS512))
@@ -52,8 +54,17 @@ public class ApplicationUtilities {
 				new EmailNotificationRequest();
 		request.getTo().add(new Recipient (fullName, email));
 		String template = getMailTemplate();
-		String content = String.format (template, fullName, "enerateVerificationToken(id)");
+		String content = String.format (template, fullName, generateVerificationToken(id));
 		request.setHtmlContent (content);
+		return request;
+	}
+	
+	public static MailRequest buildSendMessage(String email, String lastName, Long id) {
+		MailRequest request = new MailRequest ();
+		request.setTo (email);
+		String template = getMailTemplate ();
+		String content = String.format (template, lastName, generateVerificationToken ());
+		request.setMessage (content);
 		return request;
 	}
 	
