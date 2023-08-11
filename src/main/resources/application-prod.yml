@@ -14,7 +14,7 @@ spring:
         transport:
           protocol: smtp
         smtp:
-          port: smtp.gmail.com
+          port: 465
           auth: true
           starttls:
             enable: true
