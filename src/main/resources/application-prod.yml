@@ -24,14 +24,14 @@ spring:
     init:
       mode: always
 
-JWT_SECRET: ${SECRET_JWT_SECRET}
+JWT_SECRET: ${SECRET:my32characterultrasecureandultraLongsecret124632432}
 
-#mail:
-#  api:
-#    key: ${KEY_MAIL_SECRET_KEY}
-#sendinblue:
-#  mail:
-#    url: https://api.brevo.com/v3/emailCampaigns
+mail:
+  api:
+    key: ${KEY_MAIL_SECRET_KEY}
+sendinblue:
+  mail:
+    url: https://api.brevo.com/v3/emailCampaigns
 
 cloudinary:
   cloud:

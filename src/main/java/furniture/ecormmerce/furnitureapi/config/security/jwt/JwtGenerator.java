@@ -7,6 +7,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
@@ -25,8 +26,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class JwtGenerator {
     
+    private final SecretKey key;
     
     @Value("${JWT_SECRET}")
     private String jwtSecret;
@@ -91,22 +94,10 @@ public class JwtGenerator {
     }
 //    @Value("${JWT_SECRET}")
 //    private String jwtSecret;
-//
-    private final SecretKey key; //Keys.secretKeyFor(SignatureAlgorithm.HS512);
+// //Keys.secretKeyFor(SignatureAlgorithm.HS512);
 
-    @Autowired
-    public JwtGenerator(SecretKey key) {
-        this.key = key;
-    }
-//
-//    public String generateToken(UserDetails userDetails){
-//        return generateToken(new HashMap<>(), userDetails);
-//    }
-//    public String generateToken(Authentication authentication, Long expiration) {
-//        SecureUser authenticatedUser = (SecureUser) authentication.getPrincipal();
-//        String username = authenticatedUser.getUsername();
-//        return generateToken(username, expiration);
-//    }
+
+
 //    public String generateToken(String username, Long expiration) {
 //        Date currentDate = new Date();
 //        Date expirationDate = new Date(currentDate.getTime() + expiration);
