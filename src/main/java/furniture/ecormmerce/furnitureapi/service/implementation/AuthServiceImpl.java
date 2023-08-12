@@ -1,7 +1,9 @@
 package furniture.ecormmerce.furnitureapi.service.implementation;
 
+import furniture.ecormmerce.furnitureapi.config.mail.MailService;
 import furniture.ecormmerce.furnitureapi.config.security.jwt.JwtGenerator;
 import furniture.ecormmerce.furnitureapi.config.security.user.SecureUser;
+import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.request.LoginResponse;
 import furniture.ecormmerce.furnitureapi.data.dto.request.RegisterRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
@@ -31,6 +33,7 @@ import java.util.List;
 
 import static furniture.ecormmerce.furnitureapi.common.Messages.EMAIL_ALREADY_EXIST;
 import static furniture.ecormmerce.furnitureapi.common.Messages.LOGIN_FAIL;
+import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.buildNotificationRequest;
 import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.buildSendMessage;
 import static furniture.ecormmerce.furnitureapi.utils.Responses.*;
 
@@ -39,7 +42,7 @@ import static furniture.ecormmerce.furnitureapi.utils.Responses.*;
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
 	private final AppUserService service;
-//	private final MailService mailService;
+	private final MailService mailService;
 	private final PasswordEncoder encoder;
 	private final AuthenticationManager manager;
 	private final JwtGenerator generator;
@@ -72,6 +75,7 @@ public class AuthServiceImpl implements AuthService {
 		MailRequest mailRequest = buildSendMessage(savedUser.getEmail (),
 				savedUser.getLastName (),
 				savedUser.getId ());
+//		var response = mailService.sendHtmlMail (emailNotificationRequest);
 		var response = mailSenderService.sendMail (mailRequest);
 		log.info ("request lastly");
 		if (response == null){

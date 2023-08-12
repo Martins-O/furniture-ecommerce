@@ -5,5 +5,5 @@ import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationReque
 
 public interface MailService {
 	
-//	String sendHtmlMail(EmailNotificationRequest emailNotificationRequest);
+	String sendHtmlMail(EmailNotificationRequest emailNotificationRequest);
 }
