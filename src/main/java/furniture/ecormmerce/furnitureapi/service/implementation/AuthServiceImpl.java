@@ -3,11 +3,9 @@ package furniture.ecormmerce.furnitureapi.service.implementation;
 import furniture.ecormmerce.furnitureapi.config.mail.MailService;
 import furniture.ecormmerce.furnitureapi.config.security.jwt.JwtGenerator;
 import furniture.ecormmerce.furnitureapi.config.security.user.SecureUser;
-import furniture.ecormmerce.furnitureapi.data.dto.request.EmailNotificationRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.request.LoginResponse;
 import furniture.ecormmerce.furnitureapi.data.dto.request.RegisterRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
-import furniture.ecormmerce.furnitureapi.data.dto.response.TokenResponse;
 import furniture.ecormmerce.furnitureapi.data.enums.Role;
 import furniture.ecormmerce.furnitureapi.data.model.AppUser;
 import furniture.ecormmerce.furnitureapi.data.model.SecurityDetail;
@@ -33,7 +31,6 @@ import java.util.List;
 
 import static furniture.ecormmerce.furnitureapi.common.Messages.EMAIL_ALREADY_EXIST;
 import static furniture.ecormmerce.furnitureapi.common.Messages.LOGIN_FAIL;
-import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.buildNotificationRequest;
 import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.buildSendMessage;
 import static furniture.ecormmerce.furnitureapi.utils.Responses.*;
 

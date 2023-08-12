@@ -38,7 +38,7 @@ public class ApplicationUtilities {
 	public static String generateVerificationToken() {
 //		SecretKey key = Jwts.SIG.HS256.key().build();
 		return Jwts.builder()
-				.setIssuer("CLM")
+				.setIssuer("Furniture INC")
 				.signWith(Keys.secretKeyFor(SignatureAlgorithm.HS512))
 				.setIssuedAt(new Date ())
 				.compact();
