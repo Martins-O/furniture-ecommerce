@@ -24,7 +24,7 @@ spring:
     init:
       mode: always
 
-JWT_SECRET: ${SECRET:my32characterultrasecureandultraLongsecret124632432}
+JWT_SECRET: ${SECRET_JWT_SECRET}
 
 mail:
   api:
