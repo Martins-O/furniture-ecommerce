@@ -15,20 +15,20 @@ public class AppUserController {
 	
 	private final AppUserService service;
 	
-	@PostMapping("verify/{userId}")
-	public ResponseEntity<ApiResponse> verify(@PathVariable Long userId, @RequestParam String token){
+	@PostMapping("verify/{userId}/{token}")
+	public ResponseEntity<ApiResponse> verify(@PathVariable Long userId, @PathVariable String token){
 		return new ResponseEntity<>(service.verifyAccount (userId, token),
 				HttpStatus.OK);
 	}
 	
-	@GetMapping("{email}")
+	@GetMapping("/email/{email}")
 	public ResponseEntity<AppUser> getUser(@PathVariable("email") String email){
 		return new ResponseEntity<>(service.getUserByEmail (email),
 				HttpStatus.OK);
 	}
 	
 	@GetMapping("{userId}")
-	public ResponseEntity<AppUser> getUser(@PathVariable("userId") Long userId){
+	public ResponseEntity<AppUser> getUserById(@PathVariable("userId") Long userId){
 		return new ResponseEntity<>(service.getUserById (userId),
 				HttpStatus.OK);
 	}

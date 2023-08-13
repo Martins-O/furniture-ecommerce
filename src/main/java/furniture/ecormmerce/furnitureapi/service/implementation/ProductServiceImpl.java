@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
 				.builder()
 				.price (request.getPrice())
 				.description(request.getDescription())
-				.colorType (request.getColorType())
+				.colorType (List.of (request.getColorType()))
 				.sizeType (request.getSizeType())
 				.name (request.getName())
 				.quantity (request.getQuantity())
@@ -42,13 +42,13 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public ApiResponse updateProduct(Long productId, UpdateProductRequest request){
-		Optional<Product> checkProduct = repository.findById (productId);
+	public ApiResponse updateProduct(UpdateProductRequest request){
+		Optional<Product> checkProduct = repository.findById (request.getProductId ());
 		if (checkProduct.isEmpty ()) {
 			throw new IllegalStateException("Product not found");
 		}
 		Product updateProduct = checkProduct.get();
-		updateProduct.setColorType (request.getColorType());
+		updateProduct.setColorType (List.of (request.getColorType()));
 		updateProduct.setName (request.getName());
 		updateProduct.setDescription (request.getDescription());
 		updateProduct.setPrice (request.getPrice().abs ());

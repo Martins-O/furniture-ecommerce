@@ -12,7 +12,7 @@ import java.util.List;
 public interface ProductService {
 	ApiResponse createProduct(ProductRequest request);
 	
-	ApiResponse updateProduct(Long productId, UpdateProductRequest request);
+	ApiResponse updateProduct( UpdateProductRequest request);
 	
 	List<Product> getAllProducts();
 	

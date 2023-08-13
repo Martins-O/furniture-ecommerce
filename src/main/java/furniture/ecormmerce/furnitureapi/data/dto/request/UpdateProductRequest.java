@@ -16,11 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateProductRequest {
+	private Long productId;
 	private BigDecimal price;
 	private String description;
 	private String name;
 	private Type sizeType;
-	private List<Color> colorType;
+	private Color colorType;
 	private MultipartFile pictures;
 	private int quantity;
 }

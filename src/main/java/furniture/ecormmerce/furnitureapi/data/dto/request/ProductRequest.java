@@ -25,7 +25,7 @@ public class ProductRequest {
 	@NotNull(message = "Please name the product")
 	private String name;
 	private Type sizeType;
-	private List<Color> colorType;
+	private Color colorType;
 	private MultipartFile pictures;
 	private int quantity;
 	private Rating rateProduct;

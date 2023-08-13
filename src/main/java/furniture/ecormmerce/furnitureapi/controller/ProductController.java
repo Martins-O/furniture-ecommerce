@@ -7,6 +7,7 @@ import furniture.ecormmerce.furnitureapi.data.model.Product;
 import furniture.ecormmerce.furnitureapi.service.interfaces.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,16 +21,15 @@ public class ProductController {
 	
 	private final ProductService service;
 	
-	@PostMapping()
-	public ResponseEntity<ApiResponse> createProduct(@RequestBody ProductRequest request){
+	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<ApiResponse> createProduct(@ModelAttribute ProductRequest request){
 		var response = service.createProduct (request);
 		return new ResponseEntity<> (response, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("{productId}")
-	public ResponseEntity<ApiResponse> updateProduct(@PathVariable("productId") Long productId,
-	                                                 @RequestBody UpdateProductRequest request){
-		var response = service.updateProduct (productId, request);
+	@PutMapping( consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<ApiResponse> updateProduct(@ModelAttribute UpdateProductRequest request){
+		var response = service.updateProduct (request);
 		return new ResponseEntity<> (response,
 				HttpStatus.ACCEPTED);
 	}
@@ -39,13 +39,13 @@ public class ProductController {
 		return new ResponseEntity<>(service.getAllProducts (), HttpStatus.OK);
 	}
 	
-	@GetMapping("{name}")
+	@GetMapping("name/{name}")
 	public ResponseEntity<Product> getProductByName(@PathVariable String name){
 		return new ResponseEntity<>(service.getProductByName (name),
 				HttpStatus.OK);
 	}
 	
-	@GetMapping("{price}")
+	@GetMapping("price/{price}")
 	public ResponseEntity<Product> getProductByPrice(@PathVariable BigDecimal price){
 		return new ResponseEntity<>(service.getProductByPrice (price),
 				HttpStatus.OK);
