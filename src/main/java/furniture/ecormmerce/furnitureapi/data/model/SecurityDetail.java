@@ -16,7 +16,7 @@ public class SecurityDetail {
     private Long id;
     @Length(max = 500)
     private String token;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
     private AppUser user;
     private boolean isRevoked;
     private boolean isExpired;

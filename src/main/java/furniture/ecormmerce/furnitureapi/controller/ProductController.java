@@ -6,6 +6,7 @@ import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
 import furniture.ecormmerce.furnitureapi.data.model.Product;
 import furniture.ecormmerce.furnitureapi.service.interfaces.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -56,6 +57,28 @@ public class ProductController {
 		return new ResponseEntity<>(service.getProductById (productId),
 				HttpStatus.OK);
 	}
+	
+	@GetMapping("page/{pageNumber}")
+	public ResponseEntity<Page<Product>> getProductByPage(@PathVariable("pageNumber") int pageNumber){
+		return new ResponseEntity<>(service.getAllProductByPage (pageNumber), HttpStatus.OK);
+	}
+	
+	@DeleteMapping("id/{id}")
+	public void deleteById(@PathVariable Long id){
+		service.deleteProductById (id);
+	}
+	
+	@DeleteMapping("name/{name}")
+	public void deleteByName(@PathVariable String name){
+		service.deleteByName (name);
+	}
+	
+	@DeleteMapping()
+	public void delete(){
+		service.deleteAllProducts ();
+	}
+	
+	
 	
 	
 }

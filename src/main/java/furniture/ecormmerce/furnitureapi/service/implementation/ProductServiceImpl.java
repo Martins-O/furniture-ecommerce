@@ -6,15 +6,23 @@ import furniture.ecormmerce.furnitureapi.data.dto.request.UpdateProductRequest;
 import furniture.ecormmerce.furnitureapi.data.dto.response.ApiResponse;
 import furniture.ecormmerce.furnitureapi.data.model.Product;
 import furniture.ecormmerce.furnitureapi.data.repository.ProductRepository;
+import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
 import furniture.ecormmerce.furnitureapi.service.interfaces.ProductService;
 import furniture.ecormmerce.furnitureapi.utils.Responses;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+
+import static furniture.ecormmerce.furnitureapi.utils.ApplicationUtilities.NUMBER_OF_ITEMS_PER_PAGE;
 
 @RequiredArgsConstructor
 @Service
@@ -30,6 +38,8 @@ public class ProductServiceImpl implements ProductService {
 				.builder()
 				.price (request.getPrice())
 				.description(request.getDescription())
+				.material (request.getMaterial ())
+				.category (request.getCategory())
 				.colorType (List.of (request.getColorType()))
 				.sizeType (request.getSizeType())
 				.name (request.getName())
@@ -45,7 +55,7 @@ public class ProductServiceImpl implements ProductService {
 	public ApiResponse updateProduct(UpdateProductRequest request){
 		Optional<Product> checkProduct = repository.findById (request.getProductId ());
 		if (checkProduct.isEmpty ()) {
-			throw new IllegalStateException("Product not found");
+			throw new FurnitureException ("Product not found", HttpStatus.BAD_REQUEST);
 		}
 		Product updateProduct = checkProduct.get();
 		updateProduct.setColorType (List.of (request.getColorType()));
@@ -65,12 +75,23 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public Product getProductByName (String name) {
-		return repository.findProductByName (name);
+		var response = repository.findProductByName (name);
+		if (response == null) {
+			throw new FurnitureException ("product not found", HttpStatus.NOT_FOUND);
+		}
+		return response;
 	}
 	
 	@Override
 	public Product getProductByPrice(BigDecimal price) {
 		return repository.findProductByPrice(price);
+	}
+	@Override
+	public Page<Product> getAllProductByPage(int pageNumber){
+		if (pageNumber < 1) {pageNumber = 0;}
+		else pageNumber = pageNumber-1;
+		Pageable pageable = PageRequest.of (pageNumber, NUMBER_OF_ITEMS_PER_PAGE);
+		return repository.findAll (pageable);
 	}
 	
 	@Override
@@ -82,4 +103,15 @@ public class ProductServiceImpl implements ProductService {
 	public Product getProductById(Long id) {
 		return repository.findProductById (id);
 	}
+	@Override
+	@Transactional
+	public void deleteProductById(Long id) {
+		repository.deleteProductById (id);
+	}
+	@Override
+	@Transactional
+	public void deleteAllProducts() {repository.deleteAll ();}
+	@Override
+	@Transactional
+	public void deleteByName(String name) {repository.deleteByName (name);}
 }

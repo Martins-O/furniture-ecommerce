@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 public class CartItemsDto {
-	private long userOrder;
+	private String userOrder;
 	private List<Items> items;
 	@Setter
 	@Getter

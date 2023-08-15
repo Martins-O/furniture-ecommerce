@@ -1,8 +1,6 @@
 package furniture.ecormmerce.furnitureapi.data.model;
 
-import furniture.ecormmerce.furnitureapi.data.enums.Color;
-import furniture.ecormmerce.furnitureapi.data.enums.Rating;
-import furniture.ecormmerce.furnitureapi.data.enums.Type;
+import furniture.ecormmerce.furnitureapi.data.enums.*;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,4 +36,8 @@ public class Product {
 	private Integer quantity;
 	@Enumerated(EnumType.STRING)
 	private Rating productRating;
+	@Enumerated(EnumType.STRING)
+	private Category category;
+	@Enumerated(EnumType.STRING)
+	private Material material;
 }

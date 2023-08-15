@@ -34,6 +34,8 @@ public class ApplicationConfiguration {
 	@Value("${sendinblue.mail.url}")
 	private String mailUrl;
 	
+	
+	
 	@Bean
 	public SecretKey key() {
 		return Keys.secretKeyFor(SignatureAlgorithm.HS512);
