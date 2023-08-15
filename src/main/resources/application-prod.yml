@@ -42,3 +42,7 @@ cloudinary:
 
 AES_ALGORITHM: ${ALGORITHM:AES}
 ENCRYPTION_KEY : ${KEY:my2243VeryLOnd2343EncryptionKey2}
+
+paystack:
+  api:
+    key: ${PAYSTACK}
