@@ -20,10 +20,6 @@ public class JavaMailSenderServiceImpl implements JavaMailSenderService{
 		helper.setSubject (request.getSubject ());
 		helper.setFrom (request.getFrom ());
 		helper.setText (request.getMessage (), true);
-//		SimpleMailMessage mailMessage = new SimpleMailMessage();
-//		mailMessage.setTo (request.getTo ());
-//		mailMessage.setSubject (request.getSubject ());
-//		mailMessage.setText (request.getMessage ());
 		
 		mailSender.send (message);
 		return "Send Message";

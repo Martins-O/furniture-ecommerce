@@ -8,7 +8,6 @@ import furniture.ecormmerce.furnitureapi.data.model.AppUser;
 import furniture.ecormmerce.furnitureapi.data.model.Cart;
 import furniture.ecormmerce.furnitureapi.data.model.CartItem;
 import furniture.ecormmerce.furnitureapi.data.model.Product;
-import furniture.ecormmerce.furnitureapi.data.repository.CartRepository;
 import furniture.ecormmerce.furnitureapi.exception.FurnitureException;
 import furniture.ecormmerce.furnitureapi.service.interfaces.AppUserService;
 import furniture.ecormmerce.furnitureapi.service.interfaces.CartService;
@@ -38,13 +37,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class CartServiceImpl implements CartService {
-	private final CartRepository repository;
 	private final ProductService service;
 	private final AppUserService userService;
 	
 	@Value("${paystack.api.key}")
 	private String paystack;
 	
+
 
 	public ApiResponse createOrder(CartItemsDto items) {
 		Cart order = new Cart ();
@@ -56,8 +55,9 @@ public class CartServiceImpl implements CartService {
 
 		for(CartItemsDto.Items item : items.getItems ()) {
 			var foundProduct = findProductById (item.getProductId());
-
-			totalPrice = totalPrice.add(foundProduct.getPrice());
+			
+			BigDecimal itemTotalPrice = foundProduct.getPrice().multiply(BigDecimal.valueOf(item.getQuantity()));
+			totalPrice = totalPrice.add(itemTotalPrice);
 
 			cartItem.setProducts (foundProduct);
 			cartItem.setQuantity (item.getQuantity ());
@@ -66,7 +66,6 @@ public class CartServiceImpl implements CartService {
 			cartItems.add(cartItem);
 		}
 		order.setCartItems(cartItems);
-		repository.save(order);
 		String payment = initiatePayment (totalPrice, foundUser.getEmail ());
 		return ApiResponse.builder()
 				.data (payment)
@@ -132,8 +131,6 @@ public class CartServiceImpl implements CartService {
 	private AppUser findUserByEmail(String email) {
 		return userService.getUserByEmail (email);
 	}
-	@Override
-	public void deleteCart(Cart cart) {
-		repository.delete (cart);
-	}
+	
+	
 }

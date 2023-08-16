@@ -9,5 +9,5 @@ public interface CartService {
 	
 	ApiResponse createOrder(CartItemsDto items);
 	
-	void deleteCart(Cart cart);
+	
 }

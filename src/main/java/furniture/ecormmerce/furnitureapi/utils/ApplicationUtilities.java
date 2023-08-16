@@ -45,13 +45,7 @@ public class ApplicationUtilities {
 	public static String generateVerificationToken(Long id) {
 		return USER_VERIFICATION_BASE_URL + id + "/" + generateVerificationTokenLogic ();
 	}
-	
-	//	public static String generateVerificationToken(Long id) {
-//		String token = generateVerificationTokenLogic ();
-//
-////		return "localhost:8080/api/v1/users/verify/{id}/{token}+ ";
-////				?userId=" + id +"&token="+ generateVerificationTokenLogic ();
-//	}
+
 	public static EmailNotificationRequest buildNotificationRequest(
 			String email,
 			String fullName,

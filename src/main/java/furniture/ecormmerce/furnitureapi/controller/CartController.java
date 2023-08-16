@@ -6,10 +6,7 @@ import furniture.ecormmerce.furnitureapi.service.interfaces.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,7 +15,7 @@ public class CartController {
 	private final CartService service;
 	
 	@PostMapping
-	public ResponseEntity<ApiResponse> order(@ModelAttribute CartItemsDto request){
+	public ResponseEntity<ApiResponse> order(@RequestBody CartItemsDto request){
 		var response = service.createOrder (request);
 		return new ResponseEntity<> (response, HttpStatus.OK);
 	}
