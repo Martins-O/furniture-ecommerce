@@ -1,6 +1,6 @@
 spring:
   config:
-    import: application-prod.yml
+    import: secrets.yml
 
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect

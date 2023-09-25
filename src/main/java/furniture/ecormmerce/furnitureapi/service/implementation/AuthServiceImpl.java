@@ -91,7 +91,7 @@ public class AuthServiceImpl implements AuthService {
 			String jwt = generator.generateToken (new SecureUser (foundUser));
 			revokeAllUserToken (foundUser.getId ());
 			saveToken (jwt, foundUser);
-			return  okResponse (jwt);
+			return okResponse (jwt);
 		}
 		throw new LoginFailureException (LOGIN_FAIL, HttpStatus.BAD_REQUEST);
 	}
